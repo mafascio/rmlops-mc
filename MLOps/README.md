@@ -1,1 +1,0 @@
-Infra code to run Azure ML SDK R
