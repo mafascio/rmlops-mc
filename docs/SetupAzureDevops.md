@@ -8,8 +8,7 @@
     1. In Azure Devops leftnav, navigate to `Pipeline` -> `Library`. Create a new `Variable group` by clicking `+ Variable`. Name it `MLOPSVG`
     2. Open the group and select `Allow access to all pipelines`
     3. Add the following  variables (You can click the `Lock` icon in the value to mark some of them `Secret`.
-     1. AML_ACC_MODEL 
-        "r_accident_mlops"
+     1. AML_ACC_MODEL "r_accident_mlops"
      2. AML_ATTRITION_MODEL "r_attrition_mlops"
      3. AML_CLUSTER "cpu"
      4. AML_RESOURCE_GROUP "your RG"
