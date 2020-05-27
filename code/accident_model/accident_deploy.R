@@ -49,7 +49,7 @@ r_env <- r_environment(name='myr_env', version = '1',
                  #image_registry_details = NULL
 # Create inference config
 inference_config <- inference_config(
-  entry_script = "./models/accident_model/accident_predict.R" #"./code/accident_predict.R",
+  entry_script = "./code/accident_model/accident_predict.R" #"./code/accident_predict.R",
   source_directory = ".",
   environment = r_env)
 
