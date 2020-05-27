@@ -28,7 +28,7 @@ ws <- get_workspace(opt$aml_workspace,
 print(ws)
 
 # Define experiment
-experiment_name <- "r-accident-logreg-mlops-exp"
+experiment_name <- "r-accident-mlops-exp"
 exp <- experiment(ws, experiment_name)
 print(exp)
 
@@ -49,7 +49,7 @@ print(compute_target)
 
 
 ## Prepare data for training
-nassCDS <- read.csv("./code/nassCDS.csv", 
+nassCDS <- read.csv("./models/accident_model/nassCDS.csv", #"./code/nassCDS.csv", 
                      colClasses=c("factor","numeric","factor",
                                   "factor","factor","numeric",
                                   "factor","numeric","numeric",
@@ -78,10 +78,10 @@ upload_files_to_datastore(ds,
 ## Train a model
 # Define estimator
 est <- estimator(source_directory = ".",
-                 entry_script = "./code/accident_train.R",
+                 entry_script = "./models/accident_model/accident_train.R" #"./code/accident_train.R",
                  script_params = list("--data_folder" = ds$path(target_path)),
                  compute_target = compute_target,
-                 custom_docker_image = 'amlrpythonmc71c62d90.azurecr.io/mcamlsdkforr:latest'
+                 custom_docker_image = 'amlrpythonmc71c62d90.azurecr.io/mlopsamlsdkforr:latest'
                  )
 print(est)
 
@@ -103,7 +103,7 @@ summary(accident_model)
 # Register the model
 model <- register_model(ws, 
                         model_path = "outputs/model.rds", 
-                        model_name = "r_accidents_model_mlops",
+                        model_name = "r_accident_mlops",
                         description = "Predict probablity of auto accident")
 
 # Deployment will be part of deploy.R script. Commented out here
