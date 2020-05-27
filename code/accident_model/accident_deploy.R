@@ -48,8 +48,9 @@ r_env <- r_environment(name='myr_env', version = '1',
               custom_docker_image = 'amlrpythonmc71c62d90.azurecr.io/mlopsamlsdkforr:latest')#,
                  #image_registry_details = NULL
 # Create inference config
+#"./code/accident_predict.R",
 inference_config <- inference_config(
-  entry_script = "./code/accident_model/accident_predict.R" #"./code/accident_predict.R",
+  entry_script = "./code/accident_model/accident_predict.R",
   source_directory = ".",
   environment = r_env)
 
