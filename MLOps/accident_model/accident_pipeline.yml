@@ -5,7 +5,7 @@ pool:
   vmImage: 'ubuntu-16.04'
 
 container:
-    image: amlrpythonmc71c62d90.azurecr.io/mcamlsdkforr:latest 
+    image: amlrpythonmc71c62d90.azurecr.io/mlopsamlsdkforr:latest 
     endpoint: 'amlrpythonmc71c62d90' 
 
 variables:
