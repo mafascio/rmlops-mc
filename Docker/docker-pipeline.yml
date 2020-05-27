@@ -11,7 +11,7 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: '926dac88-eee9-46df-b333-c655252105bb'
-  imageRepository: 'mcamlsdkforr'
+  imageRepository: 'mlopsamlsdkforr'
   containerRegistry: 'amlrpythonmc71c62d90.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Docker/Dockerfile'
   tag: '$(Build.BuildId)'
