@@ -2,23 +2,19 @@
 # Build and push an image to Azure Container Registry
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
-trigger: none
-#- master
+trigger:
+- master
 
 resources:
 - repo: self
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '926dac88-eee9-46df-b333-c655252105bb'
+  dockerRegistryServiceConnection: '33bcaff8-e03d-4a7d-9d97-005691ca0145'
   imageRepository: 'mlopsamlsdkforr'
   containerRegistry: 'amlrpythonmc71c62d90.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Docker/Dockerfile'
   tag: '$(Build.BuildId)'
-
-# Docker
-# Build and push an image to Azure Container Registry
-# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
   
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -42,5 +38,3 @@ stages:
         tags: |
           $(tag)
           latest
-
-
