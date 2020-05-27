@@ -78,8 +78,9 @@ upload_files_to_datastore(ds,
 
 ## Train a model
 # Define estimator
+#"./code/accident_train.R",
 est <- estimator(source_directory = ".",
-                 entry_script = "./code/accident_model/accident_train.R", #"./code/accident_train.R",
+                 entry_script = "./code/accident_model/accident_train.R", 
                  script_params = list("--data_folder" = ds$path(target_path)),
                  compute_target = compute_target,
                  custom_docker_image = 'amlrpythonmc71c62d90.azurecr.io/mlopsamlsdkforr:latest'
