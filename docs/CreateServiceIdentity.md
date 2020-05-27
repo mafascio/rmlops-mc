@@ -1,8 +1,5 @@
 # Create Service identity
 
-This is used for either of these cases:
-1. Manual Service connection creation for Azure Devops
-2. For use in Batch Inference (this will not be needed in future once we get the CLI support for Batch inference from the product)
 
 ### Steps
 Note: If you don't have required permission, ask your admin to create this for you

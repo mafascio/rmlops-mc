@@ -17,5 +17,5 @@
      7. SERVICE_PRINCIPAL_ID "your SP Id"
      8. SERVICE_PRINCIPAL_PASSWORD "your SP secret"
      9. TENANT_ID "your Tenent Id"
-    <BR>`Save` the changes to the Variable group
+<BR>`Save` the changes to the Variable group
     

@@ -1,7 +1,7 @@
 # Prerequisites
 1. Have/Create an Azure Machine Learning workspace
 2. Check if ACI(Azure Container Instance) service is registered in your subscription: Try executing the command from the Cloud Shell in the portal. Instructions [here](https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart).
-    If you dont have access, ask your __admin__.
+    If you do not have access, ask your __admin__.
 
     `az provider show -n Microsoft.ContainerInstance -o table`
 
