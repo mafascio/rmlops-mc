@@ -45,11 +45,11 @@ model <- get_model(ws,
 
 
 r_env <- r_environment(name='r_attr_env', version = '1', 
-              custom_docker_image = 'amlrpythonmc71c62d90.azurecr.io/mcamlsdkforr:latest')#,
+              custom_docker_image = 'amlrpythonmc71c62d90.azurecr.io/mlopsamlsdkforr:latest')#,
                  #image_registry_details = NULL
 # Create inference config
 inference_config <- inference_config(
-  entry_script = "./code/attrition_predict.R",
+  entry_script = "./code/attrition_model/attrition_predict.R",
   source_directory = ".",
   environment = r_env)
 

@@ -34,7 +34,7 @@ ws <- get_workspace(opt$aml_workspace,
 print(ws)
 
 # Define experiment
-experiment_name <- "r-attr-mlops-exp"
+experiment_name <- "r-attrition-mlops-exp"
 exp <- experiment(ws, experiment_name)
 print(exp)
 
@@ -63,7 +63,7 @@ ds <- get_default_datastore(ws)
 
 target_path <- "attrition"
 upload_files_to_datastore(ds,
-                          list("./code/IBM-Employee-Attrition.csv"),
+                          list("./code/attrition_model/IBM-Employee-Attrition.csv"),
                           target_path = target_path,
                           overwrite = TRUE)
 
@@ -81,11 +81,11 @@ upload_files_to_datastore(ds,
                  #cran_packages = c("caret", "optparse", "e1071", "kernlab"))
 
 est <- estimator(source_directory = ".",
-                 entry_script = "./code/attrition_train.R",
+                 entry_script = "./code/attrition_model/attrition_train.R",
                  #script_params = list("--data_folder" = ds$path(target_path)),
                  script_params = list("--data_folder" = ds$path('attrition/IBM-Employee-Attrition.csv')),
                  compute_target = compute_target,
-                 custom_docker_image = 'amlrpythonmc71c62d90.azurecr.io/mcamlsdkforr:latest'
+                 custom_docker_image = 'amlrpythonmc71c62d90.azurecr.io/mlopsamlsdkforr:latest'
                  )
 print(est)
 
@@ -110,7 +110,7 @@ summary(accident_model)
 # Register the model
 model <- register_model(ws, 
                         model_path = "outputs/model.rds", 
-                        model_name = "r_attrition_model_mlops",
+                        model_name = "r_attrition_mlops",
                         description = "Predict probablity of employee attrition")
 
 # Deployment will be part of deploy.R script. Commented out here

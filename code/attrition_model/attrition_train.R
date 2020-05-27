@@ -8,7 +8,7 @@ library(data.table)
 #library(kernlab)
 
 options <- list(
-  make_option(c("-d", "--data_folder"), default='./code/IBM-Employee-Attrition.csv')
+  make_option(c("-d", "--data_folder"), default='./code/attrition_model/IBM-Employee-Attrition.csv')
 )
 
 
