@@ -11,7 +11,7 @@
     
     If you dont have access, ask your __admin__.
 
-3. Have/Create an Azure DevOps account, [create](https://dev.azure.com)
+3. Have/Create an Azure DevOps account
 
 
 
